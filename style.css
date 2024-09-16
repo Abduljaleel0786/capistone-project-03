@@ -1,0 +1,48 @@
+/* hero-section */
+
+@media (max-width: 575.98px) {
+  .carusel-cards {
+    height: 50vh;
+  }
+
+  .carusel-cards img {
+    height: 50vh;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .carusel-cards {
+    height: 60vh;
+  }
+
+  .carusel-cards img {
+    height: 60vh;
+  }
+
+}
+
+@media (min-width: 992px) {
+  .carusel-cards {
+    height: 60vh;
+  }
+
+  .carusel-cards img {
+    height: 70vh;
+  }
+
+}
+
+@media (min-width: 1200px) {
+  .carusel-cards {
+    height: 70vh;
+  }
+
+  .carusel-cards img {
+    height: 70vh;
+  }
+
+}
+
+.lifestyle-icon {
+  margin: 0 auto 20px;  
+}
