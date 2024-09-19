@@ -20,7 +20,7 @@
 <body>
 
     <!-- navbar-section -->
-     
+
     <nav class="container-fluid py-3 shadow-sm d-flex align-items-center justify-content-between sticky-top bg-white">
         <div class="container d-flex align-items-center justify-content-between">
 
@@ -43,7 +43,7 @@
                             <li class="nav-item mt-4 fw-bold">
                                 <a class="nav-link active" aria-current="page" href="#">Shop</a>
                             </li>
-                             <li class="nav-item mt-4 fw-bold">
+                            <li class="nav-item mt-4 fw-bold">
                                 <a class="nav-link active" aria-current="page" href="#">Pages</a>
                             </li>
                             <li class="nav-item mt-4 fw-bold">
@@ -84,16 +84,46 @@
                 </div>
             </div>
 
-            <div class="icons position-relative">
+            <div class="d-flex align-items-center icons position-relative">
                 <iconify-icon class="fs-3 mx-2" icon="mynaui:sun"></iconify-icon>
-               <a class="text-black" href="./sign-in.html"><iconify-icon class="fs-3 mx-2" icon="material-symbols:person"></iconify-icon></a> 
-                <iconify-icon class="fs-3 position-relative" icon="bitcoin-icons:cart-outline"></iconify-icon>
-                <span
-                    class="bg-danger text-white  opacity-75   position-absolute top-0 start-100 translate-middle rounded-5 px-2">8</span>
+                <a class="text-black" href="./sign-in.html"><iconify-icon class="fs-3 mx-2"
+                        icon="material-symbols:person"></iconify-icon></a>
+
+                <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                    aria-controls="offcanvasRight">
+                    <iconify-icon class="fs-3 position-relative" icon="bitcoin-icons:cart-outline"></iconify-icon>
+                    <span id="cart-count"
+                        class="bg-danger text-white opacity-75 position-absolute top-0 start-100 translate-middle rounded-5 px-2">0</span>
+                </button>
+
+                <!-- Offcanvas for Cart -->
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                    aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasRightLabel">Shopping Cart</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body" id="cartItems">
+                        <p>Your cart is empty.</p>
+                    </div>
+                    <div class="offcanvas-footer p-3 border-top">
+                        <div class="d-flex justify-content-between">
+                            <strong class="text-black-50">Total Price:</strong>
+                            <strong id="totalPrice">$0.00</strong>
+                        </div>
+
+                    </div>
+                </div>
             </div>
+
+
+
+
+
+
         </div>
     </nav>
-<!-- second-navbar -->
+    <!-- second-navbar -->
     <div class=" container d-flex align-items-center py-3 text-nowrap  d-none d-lg-flex">
         <div class="d-flex align-items-center ms-2 me-3">
             <iconify-icon icon="material-symbols-light:percent" width="20px" height="50px"
@@ -206,7 +236,8 @@
                             <iconify-icon class="mx-1 fs-5" icon="iconamoon:arrow-right-2-light"></iconify-icon>
                         </a>
                     </div>
-                    <img style="right: 0; bottom: 0; height: 100%; width: auto;" class="img-fluid position-absolute z-1" height="200" src="./images/card 01.png" width="300" />
+                    <img style="right: 0; bottom: 0; height: 100%; width: auto;" class="img-fluid position-absolute z-1"
+                        height="200" src="./images/card 01.png" width="300" />
                 </div>
             </div>
             <div class="col-md-4 mb-3">
@@ -219,8 +250,8 @@
                             <iconify-icon class="mx-1 fs-5" icon="iconamoon:arrow-right-2-light"></iconify-icon>
                         </a>
                     </div>
-                    <img style="right: 0; bottom: 0; height: 100%; width: auto;" class="img-fluid position-absolute z-1" height="200" src="./images/card 02.png"
-                        width="300" />
+                    <img style="right: 0; bottom: 0; height: 100%; width: auto;" class="img-fluid position-absolute z-1"
+                        height="200" src="./images/card 02.png" width="300" />
                 </div>
             </div>
             <div class="col-md-4 mb-3">
@@ -233,7 +264,8 @@
                             <iconify-icon class="mx-1 fs-5" icon="iconamoon:arrow-right-2-light"></iconify-icon>
                         </a>
                     </div>
-                    <img style="right: 0; bottom: 0; height: 100%; width: auto;" class="img-fluid position-absolute z-1" height="100%" src="./images/card 03.png"  width="300"  />
+                    <img style="right: 0; bottom: 0; height: 100%; width: auto;" class="img-fluid position-absolute z-1"
+                        height="100%" src="./images/card 03.png" width="300" />
                 </div>
             </div>
         </div>
@@ -241,7 +273,7 @@
 
     <!--Product and category-->
 
-    <section class="container">
+    <section class="container mt-5">
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-12 mt-5 pt-2 pb-5">
                 <div>
@@ -361,67 +393,73 @@
                 </div>
                 <hr>
                 <div class="d-flex flex-wrap">
-
                     <!-- 01 -->
+
                     <div class="col-6 col-md-3 position-relative">
                         <div class="text-end me-5"><iconify-icon icon="mdi:heart-outline"></iconify-icon></div>
                         <img class="img-fluid" height="200px" src="./images/cart-01.png" width="200px" />
                         <div class="fw-bold">$2.15</div>
-                        <div class="mt-2" id="underline">Muesli Fitness Energy,<br> gluten free</div>
-                        <div class="mt-1 opacity-50">500g </div>
+                        <div class="mt-2" id="underline"> Fresh pork butt steaks <br> with rosemary</div>
+                        <div class="mt-1 opacity-50">500g</div>
                         <div class="d-flex justify-content-center mt-2">
                             <div class="favorite"><i class="far fa-heart"></i></div>
-                            <div style="background-color:#F5F7F8;" id="addtocart"
+                            <div id="addtocart"
                                 class="add-to-cart ms-3 rounded-2 py-1 px-2 position-absolute top-50 start-50 translate-middle ms-5 mt-2">
-                                +</div>
+                                <iconify-icon class="btn fs-3"
+                                    onclick="addToCart(1, 'Muesli Fitness', 2.15, './images/cart-01.png')"
+                                    icon="ph:plus-fill"></iconify-icon>
+                            </div>
                         </div>
                     </div>
                     <!-- 02 -->
                     <div class="col-6 col-md-3 position-relative">
-                        <div class="d-flex justify-content-between">
-                            <div class="bg-danger w-25 text-white rounded-2 ps-2 ">-30%</div>
-                            <div class="text-end me-5"><iconify-icon icon="mdi:heart-outline"></iconify-icon></div>
-                        </div>
-                        <img class="img-fluid" height="200" src="./images/cart-02.png" width="200" />
-
-                        <div class="fw-bold">$3.12 <span class="opacity-25 text-decoration-line-through">$4.05</span>
-                        </div>
-
-                        <div class="mt-2" id="underline">Fresh orange Klementina, <br> Spain</div>
+                        <div class="text-end me-5"><iconify-icon icon="mdi:heart-outline"></iconify-icon></div>
+                        <img class="img-fluid" height="200px" src="./images/cart-02.png" width="200px" />
+                        <div class="fw-bold">$3.12</div>
+                        <div class="mt-2" id="underline"> Fresh orange Klementina, <br> Spain</div>
                         <div class="mt-1 opacity-50">1kg</div>
                         <div class="d-flex justify-content-center mt-2">
                             <div class="favorite"><i class="far fa-heart"></i></div>
-                            <div style="background-color: #F5F7F8;" id="addtocart"
+                            <div  id="addtocart"
                                 class="add-to-cart ms-3 rounded-2 py-1 px-2 position-absolute top-50 start-50 translate-middle ms-5 mt-2">
-                                +</div>
+                                <iconify-icon class="btn fs-3"
+                                    onclick="addToCart(2, 'Fresh orange Klementina, <br> Spain', 3.12, './images/cart-02.png')"
+                                    icon="ph:plus-fill"></iconify-icon>
+                            </div>
                         </div>
                     </div>
                     <!-- 03 -->
                     <div class="col-6 col-md-3 position-relative">
                         <div class="text-end me-5"><iconify-icon icon="mdi:heart-outline"></iconify-icon></div>
-                        <img class="img-fluid" height="200" src="./images/cart-03.png" width="200" />
+                        <img class="img-fluid" height="200px" src="./images/cart-03.png" width="200px" />
                         <div class="fw-bold">$0.80</div>
-                        <div class="mt-3" id="underline">Pepsi soda classic, can</div>
-                        <div class="mt-3 opacity-50"><span>330ml</span></div>
+                        <div class="mt-2" id="underline">Pepsi soda classic, can</div>
+                        <div class="mt-1 opacity-50">330ml</div>
                         <div class="d-flex justify-content-center mt-2">
                             <div class="favorite"><i class="far fa-heart"></i></div>
-                            <div style="background-color: #F5F7F8;" id="addtocart"
+                            <div id="addtocart"
                                 class="add-to-cart ms-3 rounded-2 py-1 px-2 position-absolute top-50 start-50 translate-middle ms-5 mt-2">
-                                +</div>
+                                <iconify-icon class="btn fs-3"
+                                    onclick="addToCart(3, 'Pepsi soda classic, can', 0.80, './images/cart-03.png')"
+                                    icon="ph:plus-fill"></iconify-icon>
+                            </div>
                         </div>
                     </div>
                     <!-- 04 -->
                     <div class="col-6 col-md-3 position-relative">
                         <div class="text-end me-5"><iconify-icon icon="mdi:heart-outline"></iconify-icon></div>
-                        <img class="img-fluid" height="200" src="./images/cart-04.png" width="200" />
+                        <img class="img-fluid" height="200px" src="./images/cart-04.png" width="200px" />
                         <div class="fw-bold">$2.99</div>
-                        <div class="mt-2" id="underline">Mozzarella mini cheese <br> Granaloro</div>
-                        <div class="mt-2 opacity-50">250g</div>
+                        <div class="mt-2" id="underline">Mozzarella mini cheese Granaloro</div>
+                        <div class="mt-1 opacity-50">250g</div>
                         <div class="d-flex justify-content-center mt-2">
                             <div class="favorite"><i class="far fa-heart"></i></div>
-                            <div style="background-color: #F5F7F8;" id="addtocart"
+                            <div  id="addtocart"
                                 class="add-to-cart ms-3 rounded-2 py-1 px-2 position-absolute top-50 start-50 translate-middle ms-5 mt-2">
-                                +</div>
+                                <iconify-icon class="btn fs-3"
+                                    onclick="addToCart(4, 'Mozzarella mini cheese Granaloro', 2.99, './images/cart-04.png')"
+                                    icon="ph:plus-fill"></iconify-icon>
+                            </div>
                         </div>
                     </div>
                     <!-- 05 -->
@@ -429,66 +467,72 @@
                         <div class="text-end me-5"><iconify-icon icon="mdi:heart-outline"></iconify-icon></div>
                         <img class="img-fluid" height="200px" src="./images/cart-05.png" width="200px" />
                         <div class="fw-bold">$1.24</div>
-                        <div class="mt-4" id="underline">Coconut, Indonesia</div>
-                        <div class="mt-3 opacity-50">1 coconut</div>
+                        <div class="mt-2" id="underline"> Coconut, Indonesia</div>
+                        <div class="mt-1 opacity-50">1 coconut</div>
                         <div class="d-flex justify-content-center mt-2">
                             <div class="favorite"><i class="far fa-heart"></i></div>
-                            <div style="background-color:#F5F7F8;" id="addtocart"
+                            <div id="addtocart"
                                 class="add-to-cart ms-3 rounded-2 py-1 px-2 position-absolute top-50 start-50 translate-middle ms-5 mt-2">
-                                +</div>
+                                <iconify-icon class="btn fs-3"
+                                    onclick="addToCart(5, 'Coconut, Indonesia', 1.24, './images/cart-05.png')"
+                                    icon="ph:plus-fill"></iconify-icon>
+                            </div>
                         </div>
                     </div>
+
                     <!-- 06 -->
                     <div class="col-6 col-md-3 position-relative">
                         <div class="text-end me-5"><iconify-icon icon="mdi:heart-outline"></iconify-icon></div>
-                        <img class="img-fluid" width="200px" height="200px" src="./images/cart-06.png" />
+                        <img class="img-fluid" height="200px" src="./images/cart-07.png" width="200px" />
                         <div class="fw-bold">$3.95</div>
-                        <div class="mt-3" id="underline">Pesto sauce Barilla with <br> parmesan and basil</div>
-                        <div class="mt-2 opacity-50">200g</div>
+                        <div class="mt-2" id="underline"> Pesto sauce Barilla with <br> parmesan and basil</div>
+                        <div class="mt-1 opacity-50">200g</div>
                         <div class="d-flex justify-content-center mt-2">
                             <div class="favorite"><i class="far fa-heart"></i></div>
-                            <div style="background-color: #F5F7F8;" id="addtocart"
+                            <div  id="addtocart"
                                 class="add-to-cart ms-3 rounded-2 py-1 px-2 position-absolute top-50 start-50 translate-middle ms-5 mt-2">
-                                +</div>
+                                <iconify-icon class="btn fs-3"
+                                    onclick="addToCart(7, 'Pesto sauce Barilla with <br> parmesan and basil', 3.95, './images/cart-07.png')"
+                                    icon="ph:plus-fill"></iconify-icon>
+                            </div>
                         </div>
                     </div>
                     <!-- 07 -->
                     <div class="col-6 col-md-3 position-relative">
                         <div class="text-end me-5"><iconify-icon icon="mdi:heart-outline"></iconify-icon></div>
-                        <img class="img-fluid" height="200" src="./images/cart-07.png" width="200" />
+                        <img class="img-fluid" height="200px" src="./images/cart-06.png" width="200px" />
                         <div class="fw-bold">$1.99</div>
-                        <div class="mt-4" id="underline">Fresh mango, Spain</div>
-                        <div class="mt-4 opacity-50">1 mango</div>
+                        <div class="mt-2" id="underline">Fresh mango, Spain</div>
+                        <div class="mt-1 opacity-50">1 mango</div>
                         <div class="d-flex justify-content-center mt-2">
                             <div class="favorite"><i class="far fa-heart"></i></div>
-                            <div style="background-color:#F5F7F8;" id="addtocart"
+                            <div id="addtocart"
                                 class="add-to-cart ms-3 rounded-2 py-1 px-2 position-absolute top-50 start-50 translate-middle ms-5 mt-2">
-                                +</div>
+                                <iconify-icon class="btn fs-3"
+                                    onclick="addToCart(6, 'Fresh mango, Spain', 1.99, './images/cart-06.png')"
+                                    icon="ph:plus-fill"></iconify-icon>
+                            </div>
                         </div>
                     </div>
                     <!-- 08 -->
-                    <div class="col-md-3 col-6    position-relative">
+                    <div class="col-6 col-md-3 position-relative">
                         <div class="text-end me-5"><iconify-icon icon="mdi:heart-outline"></iconify-icon></div>
-                        <img class="img-fluid" height="200" src="./images/cart-08.png" width="200" />
-                        <div class="fw-bold"> $2.40 </div>
-                        <div class="mt-3" id="underline">
-                            Fresh green asparagus, <br> bunch
-                        </div>
-                        <div class="mt-2 opacity-50"> 300g
-                        </div>
+                        <img class="img-fluid" height="200px" src="./images/cart-08.png" width="200px" />
+                        <div class="fw-bold">$2.40</div>
+                        <div class="mt-2" id="underline">Fresh green asparagus, bunch</div>
+                        <div class="mt-1 opacity-50">300g</div>
                         <div class="d-flex justify-content-center mt-2">
-                            <div class="favorite">
-                                <i class="far fa-heart">
-                                </i>
-                            </div>
-                            <div style="background-color: #F5F7F8;" id="addtocart"
-                                class=" ms-3 rounded-2  py-1 px-2 position-absolute top-50 start-50 translate-middle ms-5 mt-2">
-                                +
+                            <div class="favorite"><i class="far fa-heart"></i></div>
+                            <div id="addtocart"
+                                class="add-to-cart ms-3 rounded-2 py-1 px-2 position-absolute top-50 start-50 translate-middle ms-5 mt-2">
+                                <iconify-icon class="btn fs-3"
+                                    onclick="addToCart(8, 'Fresh green asparagus, bunch', 2.40, './images/cart-08.png')"
+                                    icon="ph:plus-fill"></iconify-icon>
                             </div>
                         </div>
                     </div>
-
                 </div>
+
 
             </div>
         </div>
@@ -591,36 +635,40 @@
         </div>
     </section>
 
-<!-- four-cards-section -->
+    <!-- four-cards-section -->
 
-    <section>
+    <section class="mt-5">
         <div class="container text-center py-5">
             <h2 class="fw-bold mb-4">Shop by lifestyle</h2>
             <div class="row justify-content-center g-4">
 
-                <div  class="col-12 col-md-3 ">
-                    <div style="background-color: #fff4e6; width: 180px; ; height: 180px;" class="lifestyle-icon gluten-free rounded-circle d-flex justify-content-center  align-items-center">
+                <div class="col-12 col-md-3 ">
+                    <div style="background-color: #fff4e6; width: 180px; ; height: 180px;"
+                        class="lifestyle-icon gluten-free rounded-circle d-flex justify-content-center  align-items-center">
                         <img src="./images/gluten-free.png" alt="Gluten-Free icon" width="90">
                     </div>
                     <h5 class="fw-bold">Gluten-Free</h5>
                     <p class="text-muted">Foods that don't contain gluten</p>
                 </div>
                 <div class="col-12 col-md-3 d-none d-md-block ">
-                    <div style="background-color: #e6f7f1;width: 180px; ; height: 180px;" class="lifestyle-icon vegan rounded-circle d-flex justify-content-center  align-items-center">
+                    <div style="background-color: #e6f7f1;width: 180px; ; height: 180px;"
+                        class="lifestyle-icon vegan rounded-circle d-flex justify-content-center  align-items-center">
                         <img src="./images/broccoli.png" alt="Vegan icon" width="60">
                     </div>
                     <h5 class="fw-bold">Vegan</h5>
                     <p class="text-muted">Vegetable based goodness</p>
                 </div>
                 <div class="col-12 col-md-3 d-none d-md-block">
-                    <div style="background-color: #e6f0ff; width: 180px; ; height: 180px;" class="lifestyle-icon plant-based rounded-circle d-flex justify-content-center  align-items-center">
+                    <div style="background-color: #e6f0ff; width: 180px; ; height: 180px;"
+                        class="lifestyle-icon plant-based rounded-circle d-flex justify-content-center  align-items-center">
                         <img src="./images/leaf.png" alt="Plant based icon" width="90">
                     </div>
                     <h5 class="fw-bold">Plant based</h5>
                     <p class="text-muted">Based on herbal ingredients</p>
                 </div>
                 <div class="col-12 col-md-3 d-none d-md-block">
-                    <div style="background-color: #ffe6e6;  width: 180px; ; height: 180px;" class="lifestyle-icon keto rounded-circle d-flex justify-content-center  align-items-center ">
+                    <div style="background-color: #ffe6e6;  width: 180px; ; height: 180px;"
+                        class="lifestyle-icon keto rounded-circle d-flex justify-content-center  align-items-center ">
                         <img class="img-fluid" src="./images/avocado.png" alt="Keto icon" width="90">
                     </div>
                     <h5 class="fw-bold">Keto</h5>
@@ -631,18 +679,18 @@
     </section>
 
     <!--Special-products-section -->
-    <section class="container">
+    <section class="container mt-5">
 
         <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-12 pb-4">
                 <div>
-                    <div style="background-color: #a6cddc;" class="overflow-hidden rounded-4" >
+                    <div style="background-color: #a6cddc;" class="overflow-hidden rounded-4">
                         <h3 class="px-4 pt-4 ">Make breakfast <br> healthy and easy</h3>
                         <div class="d-flex ">
                             <p class="ps-4">Shop now </p>
-                        <iconify-icon class="pt-1 ps-1 " icon="iconamoon:arrow-right-2-light"></iconify-icon>
+                            <iconify-icon class="pt-1 ps-1 " icon="iconamoon:arrow-right-2-light"></iconify-icon>
                         </div>
-                        <img class="img-fluid" src="./images/bottles.jpg"  alt="">
+                        <img class="img-fluid" src="./images/bottles.jpg" alt="">
                     </div>
                 </div>
             </div>
@@ -660,45 +708,55 @@
                 <div class="d-flex flex-wrap">
 
                     <!-- 01 -->
+
                     <div class="col-6 col-md-3 position-relative">
                         <div class="text-end me-5"><iconify-icon icon="mdi:heart-outline"></iconify-icon></div>
                         <img class="img-fluid" height="200px" src="./images/Rite.png" width="200px" />
                         <div class="fw-bold">$18.60</div>
-                        <div class="mt-2" id="underline"> Pure virgin olive oil Basso</div>
-                        <div class="mt-4 opacity-50">1000ml</div>
+                        <div class="mt-2" id="underline">Pure virgin olive oil Basso</div>
+                        <div class="mt-1 opacity-50">1000ml</div>
                         <div class="d-flex justify-content-center mt-2">
                             <div class="favorite"><i class="far fa-heart"></i></div>
-                            <div style="background-color:#F5F7F8;" id="addtocart"
+                            <div id="addtocart"
                                 class="add-to-cart ms-3 rounded-2 py-1 px-2 position-absolute top-50 start-50 translate-middle ms-5 mt-2">
-                                +</div>
+                                <iconify-icon class="btn fs-3"
+                                    onclick="addToCart(9, 'Pure virgin olive oil Basso', 18.60, './images/Rite.png')"
+                                    icon="ph:plus-fill"></iconify-icon>
+                            </div>
                         </div>
                     </div>
                     <!-- 02 -->
                     <div class="col-6 col-md-3 position-relative">
                         <div class="text-end me-5"><iconify-icon icon="mdi:heart-outline"></iconify-icon></div>
-                        <img class="img-fluid" height="200px" src="./images/bbq.png" width="200px" />
+                        <img class="img-fluid" height="200px" src="./images/meet-product.png" width="160px" />
                         <div class="fw-bold">$9.15</div>
-                        <div class="mt-2" id="underline"> Fresh pork butt steaks <br> with rosemary</div>
+                        <div class="mt-2" id="underline">Fresh pork butt steaks <br> with rosemary</div>
                         <div class="mt-1 opacity-50">500g</div>
                         <div class="d-flex justify-content-center mt-2">
                             <div class="favorite"><i class="far fa-heart"></i></div>
-                            <div style="background-color:#F5F7F8;" id="addtocart"
+                            <div  id="addtocart"
                                 class="add-to-cart ms-3 rounded-2 py-1 px-2 position-absolute top-50 start-50 translate-middle ms-5 mt-2">
-                                +</div>
+                                <iconify-icon class="btn fs-3 bg-transparent"
+                                    onclick="addToCart(10, 'Fresh pork butt steaks <br> with rosemary, <br> Spain', 9.15, './images/meet-product.png')"
+                                    icon="ph:plus-fill"></iconify-icon>
+                            </div>
                         </div>
                     </div>
                     <!-- 03 -->
                     <div class="col-6 col-md-3 position-relative">
                         <div class="text-end me-5"><iconify-icon icon="mdi:heart-outline"></iconify-icon></div>
-                        <img class="img-fluid" height="200px" src="./images/orange.png" width="200px" />
+                        <img class="img-fluid" height="200px" src="./images/orange.png" width="180px" />
                         <div class="fw-bold">$3.40</div>
                         <div class="mt-2" id="underline">Fresh red grapefruit</div>
-                        <div class="mt-4 opacity-50">1kg</div>
+                        <div class="mt-1 opacity-50">1kg</div>
                         <div class="d-flex justify-content-center mt-2">
                             <div class="favorite"><i class="far fa-heart"></i></div>
-                            <div style="background-color:#F5F7F8;" id="addtocart"
+                            <div id="addtocart"
                                 class="add-to-cart ms-3 rounded-2 py-1 px-2 position-absolute top-50 start-50 translate-middle ms-5 mt-2">
-                                +</div>
+                                <iconify-icon class="btn fs-3 bg-transparent"
+                                    onclick="addToCart(11, 'Fresh red grapefruit', 3.40, './images/orange.png')"
+                                    icon="ph:plus-fill"></iconify-icon>
+                            </div>
                         </div>
                     </div>
                     <!-- 04 -->
@@ -706,13 +764,16 @@
                         <div class="text-end me-5"><iconify-icon icon="mdi:heart-outline"></iconify-icon></div>
                         <img class="img-fluid" height="200px" src="./images/cheese-with-cream.png" width="200px" />
                         <div class="fw-bold">$2.59</div>
-                        <div class="mt-2" id="underline">Soft creme cheese <br> with greens Exquisa</div>
-                        <div class="mt-1 opacity-50">150</div>
+                        <div class="mt-2" id="underline">Soft creme cheese with <br> greens Exquisa</div>
+                        <div class="mt-1 opacity-50">150g</div>
                         <div class="d-flex justify-content-center mt-2">
                             <div class="favorite"><i class="far fa-heart"></i></div>
-                            <div style="background-color:#F5F7F8;" id="addtocart"
+                            <div  id="addtocart"
                                 class="add-to-cart ms-3 rounded-2 py-1 px-2 position-absolute top-50 start-50 translate-middle ms-5 mt-2">
-                                +</div>
+                                <iconify-icon class="btn fs-3"
+                                    onclick="addToCart(12, 'Soft creme cheese with br greens Exquisa', 2.59, './images/cheese-with-cream.png')"
+                                    icon="ph:plus-fill"></iconify-icon>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -770,8 +831,8 @@
     </div>
 
     <!-- Footer-section -->
-     
-    <footer style="background-color: #1c1e21;" class="footer text-white py-3">
+
+    <footer style="background-color: #1c1e21;" class="footer text-white py-3 mt-5">
         <div class="container ">
             <div class="row">
                 <div class="col-12 text-center mb-4">
@@ -862,6 +923,9 @@
             </div>
         </div>
     </footer>
+
+
+    <script src="./script.js"></script>
 
 </body>
 
