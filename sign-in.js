@@ -13,7 +13,8 @@ document.getElementById('signupForm').addEventListener('submit',function(event){
         localStorage.setItem('Email',userEmail)
         localStorage.setItem('Password',userPassword)
     
-        window.location.href = "./index.html"
+        window.location.href = "./sign-in.html"
+        alert("Account sucessfully created  Now please SignIn")
     }
     
     
